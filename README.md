@@ -1,4 +1,9 @@
-# React + TypeScript + Vite
+# Count Lines of Code
+
+The purpose of this program is to report the count of functions in any program written in Processing (a programming language based on Java). 
+It counts the total number of functions and lists the names of the functions.
+
+## (Used as a template) React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
