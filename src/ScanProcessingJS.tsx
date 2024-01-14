@@ -14,90 +14,12 @@ import { useState } from "react";
 
 // - could not figure out how to so global variables to the rescue
 
-// source: https://www.delftstack.com/howto/typescript/typescript-cloning-an-object/
-function deepCopy<T>(instance: T): T {
-  if (instance == null) {
-    return instance;
-  }
-
-  // handle Dates
-  if (instance instanceof Date) {
-    return new Date(instance.getTime()) as any;
-  }
-
-  // handle Array types
-  if (instance instanceof Array) {
-    const cloneArr = [] as any[];
-    (instance as any[]).forEach((value) => {
-      cloneArr.push(value);
-    });
-    // for nested objects
-    return cloneArr.map((value: any) => deepCopy<any>(value)) as any;
-  }
-  // handle objects
-  if (instance instanceof Object) {
-    const copyInstance = { ...(instance as { [key: string]: any }) } as {
-      [key: string]: any;
-    };
-    for (const attr in instance) {
-      if ((instance as Object).hasOwnProperty(attr))
-        copyInstance[attr] = deepCopy<any>(instance[attr]);
-    }
-    return copyInstance as T;
-  }
-  // handling primitive data types
-  return instance;
-}
-
 function isASubstrCaseSensitive(str: string, subStr: string) {
   return str.indexOf(subStr) !== -1;
 }
 
 function isASubstr(str: string, subStr: string) {
   return isASubstrCaseSensitive(str.toLowerCase(), subStr.toLowerCase());
-}
-
-function anyAreSubStr(str: string, arrayOfSubStr: string[]) {
-  let anyAreSubstr = false;
-
-  // CHQ: this loop is designed to remain within
-  // until we move through the entire list
-  // or we encounter the first array entry that
-  // is a substring.
-  let i = 0;
-  while (!anyAreSubStr && i < arrayOfSubStr.length) {
-    anyAreSubstr = isASubstr(str, arrayOfSubStr[i]);
-    ++i;
-  }
-
-  return anyAreSubstr;
-}
-
-function allAreSubStr(str: string, arrayOfSubStr: string[]) {
-  let allAreSubstr = true;
-
-  // CHQ: this loop is designed to remain within
-  // until we move through the entire list
-  // or we come across an array entry that is not
-  // a substring.
-  let i = 0;
-  while (allAreSubstr && i < arrayOfSubStr.length) {
-    allAreSubstr = isASubstr(str, arrayOfSubStr[i]);
-    ++i;
-  }
-
-  return allAreSubstr;
-}
-
-function getAllIndexes(arr, val) {
-  const indexes = [];
-  let i = arr.indexOf(val);
-
-  while (i !== -1) {
-    indexes.push(i);
-    i = arr.indexOf(val, i + 1);
-  }
-  return indexes;
 }
 
 function onlyBlanks(theLine: string) {
@@ -110,38 +32,6 @@ function onlyBlanks(theLine: string) {
   }
 
   return isABlank;
-}
-
-// CHQ: some tests to ensure that "test" is
-// different from "lineToExamine".
-function lowerCasingTestSuite(thisLine: string) {
-  const test = String(thisLine);
-  const lineToExamaine = String(test).toLocaleLowerCase();
-
-  // CHQ: test1 passed
-  // test += "TESTME";
-  // console.log("lineToExamaine is ", lineToExamaine, " rather than ", test);
-
-  // CHQ: test2 passed
-  // let otherTest = String(thisLine);
-  // let lineToExamaine2 = "bro" + String(otherTest).toLocaleLowerCase();
-  // console.log(
-  //   "lineToExamaine2 is ",
-  //   lineToExamaine2,
-  //   " rather than ",
-  //   otherTest
-  // );
-
-  // CHQ: test3 passed
-  // let otherTest2 = String(thisLine);
-  // let lineToExamaine3 = String(thisLine).toLocaleLowerCase();
-
-  // console.log(
-  //   "lineToExamaine3 is ",
-  //   lineToExamaine3,
-  //   " rather than ",
-  //   otherTest2
-  // );
 }
 
 function createNewText(anArrayOfLines: string[]) {
@@ -205,84 +95,6 @@ function createNewText(anArrayOfLines: string[]) {
     String(numBlankLines);
 
   return [newArrayOfLines, programScanResults, listOfFunctions];
-}
-
-// CHQ: may use this for graphing data from time log insight tabulations?
-function equalLengths(csvFile) {
-  const tmp = csvFile;
-  let matchingFieldCounts = true;
-
-  const firstLine = tmp[0];
-
-  let rowNum = 0;
-
-  /*
-  
-    for some reason, this function 
-    isn't flagging the following as an error:
-
-    "
-    x, y
-    1, 2
-    3, 
-    5, 6
-    "
-
-    and When the graph is applied, it 
-    pretends as if the missing value is a 0.
-
-   */
-
-  while (matchingFieldCounts && rowNum < csvFile.length) {
-    const rowLength = csvFile[rowNum].length;
-    const sameLengths = rowLength === firstLine.length;
-
-    const endVal = csvFile[rowNum][rowLength - 1];
-
-    // all vals in list are of type "string"
-    // console.log(typeof endVal);
-
-    // endVal.length === 1;
-
-    const missingEndVal = endVal === "";
-    matchingFieldCounts = sameLengths && !missingEndVal;
-    ++rowNum;
-  }
-
-  return matchingFieldCounts;
-}
-
-// standard helper functions
-
-// function occurencesOfASubstring(targetStr, substr) {
-//   return (targetStr.match(/substr/g) || []).length;
-// }
-
-// Purpose: gives as a text output
-// the nutrition data for 1 unit of each of the chosen foods
-
-function createArrayOfIndices(size) {
-  const myArr = [];
-  for (let i = 0; i < size; ++i) {
-    myArr.push(i);
-  }
-  return myArr;
-}
-
-// https://www.w3schools.com/js/js_random.asp
-
-// source: https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
-function makeid(length: number) {
-  let result = "";
-  const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  const charactersLength = characters.length;
-  let counter = 0;
-  while (counter < length) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    counter += 1;
-  }
-  return result;
 }
 
 function isAlphanumeric(str: string) {
@@ -436,15 +248,13 @@ const ScanProcessingJS: React.FC = () => {
     { name: "test2", values: ["a", "b", "c"] },
   ];
 
-  function myCallBack() {
-    const myChoice = 1;
-
-    if (myChoice === 0) {
-      alert("bro alert");
-    } else if (myChoice === 1) {
-      console.log("bro console");
-    }
-  }
+  const testInput = "3";
+  console.log(
+    "Calling this function to keep these helper functions in the code. Is ",
+    testInput,
+    "an integer?\n",
+    String(isAnInteger("3")),
+  );
 
   return (
     <section className="line-page">
