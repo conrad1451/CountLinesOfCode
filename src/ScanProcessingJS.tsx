@@ -44,7 +44,29 @@ function createNewText(anArrayOfLines: string[]) {
 
   // const listOfFunctions: any[] = [];
 
-  const listOfFunctions: [number, string] = [0, ""];
+  // issues with line: Argument of type '(string | number)[]'
+  // is not assignable to parameter of type 'string | number'.
+  // const listOfFunctions: [number, string] = [0, ""];
+
+  // why is listOfFunctions a const? I will try let
+  // because this
+  // 'listOfFunctions' is never reassigned. Use 'const' instead.eslint(prefer-const)
+
+  // follow line is bad
+  // let listOfFunctions = [];
+  // because
+  // Variable 'listOfFunctions' implicitly has type 'any[]' in some locations where its type cannot be determined.typescript(7034)
+
+  // Unexpected any. Specify a different type.eslint(@typescript-eslint/no-explicit-any)
+  // const listOfFunctions: any[] = [];
+
+  // Unexpected any. Specify a different type.eslint(@typescript-eslint/no-explicit-any)
+  // eslint-disable-next-line
+  // const listOfFunctions: Array<any> = [];
+
+  // issue goes away with an eslint disable next line
+  // eslint-disable-next-line
+  const listOfFunctions: Array<any> = [];
 
   const newArrayOfLines: string[] = [];
 
@@ -64,7 +86,7 @@ function createNewText(anArrayOfLines: string[]) {
           const posVarKeyword = tmpStr.indexOf("var");
           const posFunctionKeyword = tmpStr.indexOf(" = function");
 
-          isVerifiedFunction = posVarKeyword < posFunctionKeyword;
+          const isVerifiedFunction = posVarKeyword < posFunctionKeyword;
 
           if (isVerifiedFunction) {
             const functionName = tmpStr.substring(
