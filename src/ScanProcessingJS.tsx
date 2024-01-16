@@ -42,7 +42,9 @@ function createNewText(anArrayOfLines: string[]) {
   let numCommentLines = 0;
   let numFunctions = 0;
 
-  const listOfFunctions = [];
+  // const listOfFunctions: any[] = [];
+
+  const listOfFunctions: [number, string] = [0, ""];
 
   const newArrayOfLines: string[] = [];
 
@@ -156,10 +158,11 @@ function isANumber(str: string) {
 }
 
 const ScanProcessingJS: React.FC = () => {
-  const [list, setList] = useState<any[]>([]); // source: https://www.telerik.com/blogs/getting-started-typescript-react
-  const [selected, setSelected] = useState({ x: {}, y: {} });
+  // const [list, setList] = useState<any[]>([]); // source: https://www.telerik.com/blogs/getting-started-typescript-react
+  // const [selected, setSelected] = useState({ x: {}, y: {} });
 
-  const [text, setText] = useState<string[]>([]);
+  // const [text, setText] = useState<string[]>([]);
+  const [text, setText] = useState<string>("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -235,25 +238,25 @@ const ScanProcessingJS: React.FC = () => {
     setText(outputMessage);
   };
 
-  const [dropdownOpen, setOpen] = useState(false);
+  // const [dropdownOpen, setOpen] = useState(false);
 
-  const [modalOpen3, setModalOpen3] = useState(false);
+  // const [modalOpen3, setModalOpen3] = useState(false);
 
-  const toggle = () => setOpen(!dropdownOpen);
+  // const toggle = () => setOpen(!dropdownOpen);
 
-  const toggleModal3 = () => setModalOpen3(!modalOpen3);
+  // const toggleModal3 = () => setModalOpen3(!modalOpen3);
 
-  const randomList = [
-    { name: "test", values: ["d", "e", "f"] },
-    { name: "test2", values: ["a", "b", "c"] },
-  ];
+  // const randomList = [
+  //   { name: "test", values: ["d", "e", "f"] },
+  //   { name: "test2", values: ["a", "b", "c"] },
+  // ];
 
   const testInput = "3";
   console.log(
     "Calling this function to keep these helper functions in the code. Is ",
     testInput,
     "an integer?\n",
-    String(isAnInteger("3")),
+    String(isANumber("3")),
   );
 
   return (
