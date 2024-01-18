@@ -297,6 +297,7 @@ const ScanProcessingJS: React.FC = () => {
           rows={10}
           required
         ></textarea>
+        <br/>
         <button type="submit">Process</button>
       </form>
       <textarea
