@@ -187,7 +187,7 @@ const ScanProcessingJS: React.FC = () => {
   const [text, setText] = useState<string>("");
 
   // eslint-disable-next-line
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
     const { csv } = event.target.elements;
 
