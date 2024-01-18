@@ -75,7 +75,7 @@ function createNewText(anArrayOfLines: string[]) {
     if (!onlyBlanks(line)) {
       const tmpStr = line.trim();
       // tmpStr.trim
-
+ 
       if (tmpStr[0] === "/" || tmpStr[0] === "*") {
         ++numCommentLines;
       } else {
