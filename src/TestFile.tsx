@@ -60,9 +60,9 @@ export default function TestFile() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box   sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={24} sm={12}>
                 <TextField
                   autoComplete="given-name"
                   name="firstName"
@@ -73,7 +73,7 @@ export default function TestFile() {
                   autoFocus
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={24} sm={12}>
                 <TextField
                   required
                   fullWidth
@@ -83,7 +83,7 @@ export default function TestFile() {
                   autoComplete="family-name"
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={24}>
                 <TextField
                   required
                   fullWidth
@@ -93,7 +93,7 @@ export default function TestFile() {
                   autoComplete="email"
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={24}>
                 <TextField
                   required
                   fullWidth
@@ -103,13 +103,7 @@ export default function TestFile() {
                   id="password"
                   autoComplete="new-password"
                 />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid>
+              </Grid> 
             </Grid>
             <Button
               type="submit"
