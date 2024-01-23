@@ -14,6 +14,8 @@ import { useState } from "react";
 
 // - could not figure out how to so global variables to the rescue
 
+import "./FormStyle.css";
+
 function isASubstrCaseSensitive(str: string, subStr: string) {
   return str.indexOf(subStr) !== -1;
 }
