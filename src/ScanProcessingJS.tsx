@@ -4,6 +4,11 @@ import React from "react";
 // import "reactjs-popup/dist/index.css";
 // import * as CSV from "csv-string"
 import { useState } from "react";
+
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import Grid, { GridSpacing } from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+
 // Sources:
 // [1] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase
 // [2] https://stackoverflow.com/questions/5296268/fastest-way-to-check-a-string-contain-another-substring-in-javascript
@@ -292,6 +297,23 @@ const ScanProcessingJS: React.FC = () => {
         Counts the lines of code in any given program written in the Khan
         Academy variant of Processing
       </p>
+      <Grid container className={classes.root} spacing={2}>
+      <Grid item xs={12}>
+        <Grid container justifyContent="center" spacing={spacing}>
+          
+          {[0, 1, 2, 3].map((value) => (
+            <Grid key={value} item>
+              <Paper className={classes.paper} />
+            </Grid>
+          ))}
+          {
+            <Grid item>
+              <Paper className={classes.paper} />
+            </Grid>
+          } 
+        </Grid>
+      </Grid>
+    </Grid>
       <form onSubmit={handleSubmit}>
         <textarea
           name="csv"
