@@ -220,6 +220,10 @@ const ScanProcessingJS: React.FC = () => {
   const [spacing, setSpacing] = React.useState<GridSpacing>(2);
   const classes = useStyles();
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSpacing(Number((event.target as HTMLInputElement).value) as GridSpacing);
+  };
+
   const handleSubmit = (event: any) => {
     event.preventDefault();
     const { csv } = event.target.elements;
@@ -309,23 +313,58 @@ const ScanProcessingJS: React.FC = () => {
         Counts the lines of code in any given program written in the Khan
         Academy variant of Processing
       </p>
+
       <Grid container className={classes.root} spacing={2}>
-      <Grid item xs={12}>
-        <Grid container justifyContent="center" spacing={spacing}>
-          
-          {[0, 1, 2, 3].map((value) => (
-            <Grid key={value} item>
-              <Paper className={classes.paper} />
+        <Grid item xs={12}>
+          <Grid container justifyContent="center" spacing={spacing}>
+            {[0, 1, 2, 3, 4, 5, 6, 7].map((value) => (
+              <Grid key={value} item>
+                <Paper className={classes.paper} />
+              </Grid>
+            ))}
+            {[0, 1, 2, 3].map((value) => (
+              <Grid key={value} item>
+                <Paper className={classes.paper} />
+              </Grid>
+            ))}
+            {
+              <Grid item>
+                <Paper className={classes.paper} />
+              </Grid>
+            }
+            {
+              <Grid item>
+                <Paper className={classes.paper} />
+              </Grid>
+            }
+          </Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <Paper className={classes.control}>
+            <Grid container>
+              <Grid item>
+                <FormLabel>spacing</FormLabel>
+                <RadioGroup
+                  name="spacing"
+                  aria-label="spacing"
+                  value={spacing.toString()}
+                  onChange={handleChange}
+                  row
+                >
+                  {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
+                    <FormControlLabel
+                      key={value}
+                      value={value.toString()}
+                      control={<Radio />}
+                      label={value.toString()}
+                    />
+                  ))}
+                </RadioGroup>
+              </Grid>
             </Grid>
-          ))}
-          {
-            <Grid item>
-              <Paper className={classes.paper} />
-            </Grid>
-          } 
+          </Paper>
         </Grid>
       </Grid>
-    </Grid>
       <form onSubmit={handleSubmit}>
         <textarea
           name="csv"
