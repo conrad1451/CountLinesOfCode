@@ -321,12 +321,7 @@ const ScanProcessingJS: React.FC = () => {
       <Grid container className={classes.root} spacing={2}>
         <Grid item xs={12}>
           <Grid container justifyContent="center" spacing={spacing}>
-            {[0, 1, 2, 3, 4, 5, 6, 7].map((value) => (
-              <Grid key={value} item>
-                <Paper className={classes.paper} />
-              </Grid>
-            ))}
-            {[0, 1, 2, 3].map((value) => (
+            {[0, 1, 2].map((value) => (
               <Grid key={value} item>
                 <Paper className={classes.paper} />
               </Grid>
