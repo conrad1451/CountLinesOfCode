@@ -321,11 +321,6 @@ const ScanProcessingJS: React.FC = () => {
       <Grid container className={classes.root} spacing={2}>
         <Grid item xs={12}>
           <Grid container justifyContent="center" spacing={spacing}>
-            {[0, 1].map((value) => (
-              <Grid key={value} item>
-                <Paper className={classes.paper} />
-              </Grid>
-            ))}
             {
               <Grid item>
                 <form onSubmit={handleSubmit}>
@@ -343,7 +338,13 @@ const ScanProcessingJS: React.FC = () => {
             }
             {
               <Grid item>
-                <Paper className={classes.paper} />
+                <textarea
+                  name="resultField"
+                  placeholder="Program analysis comes here"
+                  value={text}
+                  rows={10}
+                  required
+                ></textarea>
               </Grid>
             }
           </Grid>
@@ -375,13 +376,7 @@ const ScanProcessingJS: React.FC = () => {
         </Grid>
       </Grid>
 
-      <textarea
-        name="resultField"
-        placeholder="Program analysis comes here"
-        value={text}
-        rows={10}
-        required
-      ></textarea>
+
     </section>
   );
 };
