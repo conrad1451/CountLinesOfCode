@@ -21,6 +21,21 @@ import Paper from "@material-ui/core/Paper";
 
 import "./FormStyle.css";
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      height: 140,
+      width: 100,
+    },
+    control: {
+      padding: theme.spacing(2),
+    },
+  })
+);
+
 function isASubstrCaseSensitive(str: string, subStr: string) {
   return str.indexOf(subStr) !== -1;
 }
@@ -192,7 +207,7 @@ const ScanProcessingJS: React.FC = () => {
 
   // const [text, setText] = useState<string[]>([]);
   const [text, setText] = useState<string>("");
-
+  const classes = useStyles();
   // eslint-disable-next-line
   const handleSubmit = (event: any) => {
     event.preventDefault();
