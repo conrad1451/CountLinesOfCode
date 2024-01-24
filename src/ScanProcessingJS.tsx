@@ -4,6 +4,15 @@ import React from "react";
 // import "reactjs-popup/dist/index.css";
 // import * as CSV from "csv-string"
 import { useState } from "react";
+
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import Grid, { GridSpacing } from "@material-ui/core/Grid";
+import FormLabel from "@material-ui/core/FormLabel";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import Radio from "@material-ui/core/Radio";
+import Paper from "@material-ui/core/Paper";
+
 // Sources:
 // [1] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase
 // [2] https://stackoverflow.com/questions/5296268/fastest-way-to-check-a-string-contain-another-substring-in-javascript
@@ -12,7 +21,26 @@ import { useState } from "react";
 // [4] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
 // [5] https://stackoverflow.com/questions/26069238/call-multiple-functions-onclick-reactjs
 
+//[A]
+
 // - could not figure out how to so global variables to the rescue
+
+import "./FormStyle.css";
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      height: 140,
+      width: 100,
+    },
+    control: {
+      padding: theme.spacing(2),
+    },
+  })
+);
 
 function isASubstrCaseSensitive(str: string, subStr: string) {
   return str.indexOf(subStr) !== -1;
@@ -69,8 +97,10 @@ function createNewText(anArrayOfLines: string[]) {
   const listOfFunctions: Array<any> = [];
 
   const newArrayOfLines: string[] = [];
-
+  
   const newArrayOfBlanks: string[] = [];
+
+
   anArrayOfLines.forEach((line: string) => {
     if (!onlyBlanks(line)) {
       const tmpStr = line.trim();
@@ -121,85 +151,95 @@ function createNewText(anArrayOfLines: string[]) {
   return [newArrayOfLines, programScanResults, listOfFunctions];
 }
 
-function isAlphanumeric(str: string) {
-  return /^[a-zA-Z0-9]+$/.test(str);
-}
 
-function isAlpha(str: string) {
-  return /^[a-zA-Z]+$/.test(str);
-}
 
-function isNumeric(str: string) {
-  // following fails: allows '1a11b3' to be considered a number
-  return isAlphanumeric(str) && !isAlpha(str);
-}
 
-// CHQ: yes the time complexity for this function
-// is O(n), but that's okay
-function isAnInteger(str: string) {
-  let isANum = true;
-  let i = 0;
-  while (isANum && i < str.length) {
-    const isCharANum = isNumeric(str[i]);
+// ------------------------------ SECTION START : HELPER FUNCTIONS TO UNCOMMENT AND USE IF NEEDED ----------------//
 
-    // CHQ: as long as isCharANum is a number, then isANum is true;
+// function isAlphanumeric(str: string) {
+//   return /^[a-zA-Z0-9]+$/.test(str);
+// }
 
-    isANum = isCharANum;
+// function isAlpha(str: string) {
+//   return /^[a-zA-Z]+$/.test(str);
+// }
 
-    ++i;
-  }
+// function isNumeric(str: string) {
+//   // following fails: allows '1a11b3' to be considered a number
+//   return isAlphanumeric(str) && !isAlpha(str);
+// }
 
-  // if i === str.length, we know it is true. In all circumstances,
-  // isANum should equal (i === str.length)
-  return isANum;
-}
+// // CHQ: yes the time complexity for this function
+// // is O(n), but that's okay
+// function isAnInteger(str: string) {
+//   let isANum = true;
+//   let i = 0;
+//   while (isANum && i < str.length) {
+//     const isCharANum = isNumeric(str[i]);
 
-function isAFloatingPoint(str: string) {
-  let isFloatingPt = false;
+//     // CHQ: as long as isCharANum is a number, then isANum is true;
 
-  // let pos1 = str.search("."); //nope
-  // let pos1 = str.indexOf("."); // want 1.7 to become 7, not .7
-  const pos1 = str.indexOf(".") + 1;
+//     isANum = isCharANum;
 
-  if (pos1 !== -1 && pos1 < str.length) {
-    const str2 = str.substring(pos1);
+//     ++i;
+//   }
 
-    // let pos2 = str2.search(".");
-    const pos2 = str2.indexOf(".");
+//   // if i === str.length, we know it is true. In all circumstances,
+//   // isANum should equal (i === str.length)
+//   return isANum;
+// }
 
-    if (pos2 === -1 && isNumeric(str2)) {
-      isFloatingPt = true;
-    }
-  }
+// function isAFloatingPoint(str: string) {
+//   let isFloatingPt = false;
 
-  return isFloatingPt;
-}
+//   // let pos1 = str.search("."); //nope
+//   // let pos1 = str.indexOf("."); // want 1.7 to become 7, not .7
+//   const pos1 = str.indexOf(".") + 1;
 
-function isANumber(str: string) {
-  return isAnInteger(str) || isAFloatingPoint(str);
-}
+//   if (pos1 !== -1 && pos1 < str.length) {
+//     const str2 = str.substring(pos1);
+
+//     // let pos2 = str2.search(".");
+//     const pos2 = str2.indexOf(".");
+
+//     if (pos2 === -1 && isNumeric(str2)) {
+//       isFloatingPt = true;
+//     }
+//   }
+
+//   return isFloatingPt;
+// }
+
+// function isANumber(str: string) {
+//   return isAnInteger(str) || isAFloatingPoint(str);
+// }
+
+
+
+// ------------------------------ SECTION END : HELPER FUNCTIONS TO UNCOMMENT AND USE IF NEEDED ----------------//
+
 
 const ScanProcessingJS: React.FC = () => {
-  // const [list, setList] = useState<any[]>([]); // source: https://www.telerik.com/blogs/getting-started-typescript-react
-  // const [selected, setSelected] = useState({ x: {}, y: {} });
-
-  // const [text, setText] = useState<string[]>([]);
   const [text, setText] = useState<string>("");
+  const [spacing, setSpacing] = React.useState<GridSpacing>(2);
+  const classes = useStyles();
 
-  // eslint-disable-next-line
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSpacing(Number((event.target as HTMLInputElement).value) as GridSpacing);
+  };
+
   const handleSubmit = (event: any) => {
     event.preventDefault();
     const { csv } = event.target.elements;
 
-    // source: https://stackoverflow.com/questions/9196954/how-to-read-line-by-line-of-a-text-area-html-tag
-    const arrayOfLines = csv.value.split("\n");
+    
+    const arrayOfLines = csv.value.split("\n"); // [A]
 
     // arrayOfLines is array where every element is string of one line
-
     const thetmp1 = createNewText(arrayOfLines);
-    // let brobro = thetmp1[0];
-    // console.log("THIS IS THE BRO")
-    // console.log(brobro);
+    // let teststring = thetmp1[0];
+    // console.log("THIS IS THE TEST STRING")
+    // console.log(teststring);
 
     // let organizedData = produceOrganizedData(arrayOfLines);
 
@@ -260,27 +300,14 @@ const ScanProcessingJS: React.FC = () => {
 
     setText(outputMessage);
   };
-
-  // const [dropdownOpen, setOpen] = useState(false);
-
-  // const [modalOpen3, setModalOpen3] = useState(false);
-
-  // const toggle = () => setOpen(!dropdownOpen);
-
-  // const toggleModal3 = () => setModalOpen3(!modalOpen3);
-
-  // const randomList = [
-  //   { name: "test", values: ["d", "e", "f"] },
-  //   { name: "test2", values: ["a", "b", "c"] },
-  // ];
-
-  const testInput = "3";
-  console.log(
-    "Calling this function to keep these helper functions in the code. Is ",
-    testInput,
-    "an integer?\n",
-    String(isANumber("3")),
-  );
+  
+  // const testInput = "3";
+  // console.log(
+  //   "Calling this function to keep these helper functions in the code. Is ",
+  //   testInput,
+  //   "an integer?\n",
+  //   String(isANumber("3")),
+  // );
 
   return (
     <section className="line-page">
@@ -290,23 +317,66 @@ const ScanProcessingJS: React.FC = () => {
         Counts the lines of code in any given program written in the Khan
         Academy variant of Processing
       </p>
-      <form onSubmit={handleSubmit}>
-        <textarea
-          name="csv"
-          placeholder="Paste the code here...."
-          rows={10}
-          required
-        ></textarea>
-        <br/>
-        <button type="submit">Process</button>
-      </form>
-      <textarea
-        name="resultField"
-        placeholder="Program analysis comes here"
-        value={text}
-        rows={10}
-        required
-      ></textarea>
+
+      <Grid container className={classes.root} spacing={2}>
+        <Grid item xs={12}>
+          <Grid container justifyContent="center" spacing={spacing}>
+            {
+              <Grid item>
+                <form onSubmit={handleSubmit}>
+                  <textarea
+                    name="csv"
+                    placeholder="Paste the code here...."
+                    rows={10}
+                    required
+                    >
+                    </textarea>
+                    <br/>
+                    <button type="submit">Process</button>
+                </form>
+              </Grid>
+            }
+            {
+              <Grid item>
+                <textarea
+                  name="resultField"
+                  placeholder="Program analysis comes here"
+                  value={text}
+                  rows={10}
+                  required
+                ></textarea>
+              </Grid>
+            }
+          </Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <Paper className={classes.control}>
+            <Grid container>
+              <Grid item>
+                <FormLabel>spacing</FormLabel>
+                <RadioGroup
+                  name="spacing"
+                  aria-label="spacing"
+                  value={spacing.toString()}
+                  onChange={handleChange}
+                  row
+                >
+                  {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
+                    <FormControlLabel
+                      key={value}
+                      value={value.toString()}
+                      control={<Radio />}
+                      label={value.toString()}
+                    />
+                  ))}
+                </RadioGroup>
+              </Grid>
+            </Grid>
+          </Paper>
+        </Grid>
+      </Grid>
+
+
     </section>
   );
 };
