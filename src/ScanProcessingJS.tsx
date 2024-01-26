@@ -323,37 +323,35 @@ const ScanProcessingJS: React.FC = () => {
         {/* <Grid item lg={12}> */}
         <Grid item className="col-4">
           <Grid container justifyContent="center" spacing={spacing}>
-            {
-              <Grid item>
-                <form onSubmit={handleSubmit}>
-                  <textarea
-                    name="csv"
-                    placeholder="Paste the code here...."
-                    rows={10}
-                    required
-                    >
-                    </textarea>
-                    <br/>
-                    <button type="submit">Process</button>
-                </form>
-              </Grid>
-            }
-            {
-              <Grid item>
+            <Grid item>
+              <form onSubmit={handleSubmit}>
                 <textarea
-                  name="resultField"
-                  placeholder="Program analysis comes here"
-                  value={text}
-                  rows={10}
-                  required
+                name="csv"
+                placeholder="Paste the code here...."
+                required
                 ></textarea>
+                <br/>
+                <button type="submit">Process</button>
+              </form>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item className="col-4">
+          <Grid container justifyContent="center" spacing={spacing}>
+            <Grid item>
+              <textarea
+                name="resultField"
+                placeholder="Program analysis comes here"
+                value={text}
+                rows={10}
+                required
+              ></textarea>
               </Grid>
-            }
           </Grid>
         </Grid>
         {/* <Grid item xs={12} lg={12}> */}
-        {/* <Grid item lg={12}> */}
-        <Grid item className="col-4">
+        {/* <Grid item className="col-4"> */}
+        <Grid item lg={12}>
           <Paper className={classes.control}>
             <Grid container>
               <Grid item>
