@@ -320,7 +320,8 @@ const ScanProcessingJS: React.FC = () => {
 
       <Grid container className={classes.root} spacing={2}>
         {/* <Grid item xs={12} lg={12}> */}
-        <Grid item lg={12}>
+        {/* <Grid item lg={12}> */}
+        <Grid item class="col-4">
           <Grid container justifyContent="center" spacing={spacing}>
             {
               <Grid item>
@@ -351,7 +352,8 @@ const ScanProcessingJS: React.FC = () => {
           </Grid>
         </Grid>
         {/* <Grid item xs={12} lg={12}> */}
-        <Grid item lg={12}>
+        {/* <Grid item lg={12}> */}
+        <Grid item class="col-4">
           <Paper className={classes.control}>
             <Grid container>
               <Grid item>
