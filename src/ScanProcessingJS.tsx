@@ -15,6 +15,8 @@ import { Box, Grid } from "@material-ui/core";
 // import Radio from "@material-ui/core/Radio";
 // import Paper from "@material-ui/core/Paper";
 
+import { palette } from '@mui/system';
+
 // Sources:
 // [1] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase
 // [2] https://stackoverflow.com/questions/5296268/fastest-way-to-check-a-string-contain-another-substring-in-javascript
@@ -322,8 +324,8 @@ const ScanProcessingJS: React.FC = () => {
 
       {/* Source: https://stackoverflow.com/questions/63353297/material-ui-how-to-stretch-grid-container-to-parent-height-and-width */}
       {/* rgb(192, 239, 239) */}
-      <Box bgcolor="rgb(192, 239, 239)" display="flex" height="100vh" width="100vw">
-      <Box bgcolor="grey" flex={{ xs: 1, sm: 2 }} >
+      <Box bgcolor="info.main" display="flex" height="100vh" width="100vw">
+      <Box bgcolor="info.main" flex={{ xs: 1, sm: 2 }} >
         <form onSubmit={handleSubmit}>
           <textarea
             name="csv"
@@ -335,7 +337,7 @@ const ScanProcessingJS: React.FC = () => {
         </form> 
       </Box>
       <Box
-        bgcolor="grey"
+        bgcolor="info.main"
         display="flex"
         flex={3}
         flexDirection={{ xs: "column", sm: "row" }}
