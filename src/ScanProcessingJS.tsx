@@ -7,12 +7,13 @@ import { useState } from "react";
 
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 // import Grid, { GridSpacing } from "@material-ui/core/Grid";
-import { Box, CssBaseline, Grid } from "@material-ui/core";
-import FormLabel from "@material-ui/core/FormLabel";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import Radio from "@material-ui/core/Radio";
-import Paper from "@material-ui/core/Paper";
+// import { Box, CssBaseline, Grid } from "@material-ui/core";
+import { Box, Grid } from "@material-ui/core";
+// import FormLabel from "@material-ui/core/FormLabel";
+// import FormControlLabel from "@material-ui/core/FormControlLabel";
+// import RadioGroup from "@material-ui/core/RadioGroup";
+// import Radio from "@material-ui/core/Radio";
+// import Paper from "@material-ui/core/Paper";
 
 // Sources:
 // [1] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase
@@ -329,11 +330,28 @@ const ScanProcessingJS: React.FC = () => {
         flex={1}
         flexDirection={{ xs: "column", sm: "row" }}
       >
+        <form onSubmit={handleSubmit}>
+          <textarea
+            name="csv"
+            placeholder="Paste the code here...."
+            required
+            ></textarea>
+          <br/>
+          <button type="submit">Process</button>
+        </form>
+
+        <textarea
+          name="resultField"
+          placeholder="Program analysis comes here"
+          value={text}
+          rows={10}
+          required
+          ></textarea>
         <Box bgcolor="blue" flex={{ xs: 1, sm: 2 }} />
         <Box bgcolor="purple" flex={{ xs: 1, sm: 2 }} />
       </Box>
     </Box>
-    
+
       {/* <>
       <CssBaseline />
       <div
@@ -367,28 +385,17 @@ const ScanProcessingJS: React.FC = () => {
         {/* <Grid item lg={12}>
           <Grid container justifyContent="center" spacing={spacing}>
             <Grid item>
-              <form onSubmit={handleSubmit}>
-                <textarea
-                name="csv"
-                placeholder="Paste the code here...."
-                required
-                ></textarea>
-                <br/>
-                <button type="submit">Process</button>
-              </form>
+
+            // used to have form here but moved it
             </Grid>
           </Grid>
         </Grid> */}
         {/* <Grid item className="col-4">
           <Grid container justifyContent="center" spacing={spacing}>
             <Grid item>
-              <textarea
-                name="resultField"
-                placeholder="Program analysis comes here"
-                value={text}
-                rows={10}
-                required
-              ></textarea>
+
+            // used to have form here but moved it
+
               </Grid>
           </Grid>
         </Grid> */}
