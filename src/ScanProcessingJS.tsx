@@ -321,8 +321,8 @@ const ScanProcessingJS: React.FC = () => {
       </p>
 
       {/* Source: https://stackoverflow.com/questions/63353297/material-ui-how-to-stretch-grid-container-to-parent-height-and-width */}
-
-      <Box bgcolor="grey" display="flex" height="100vh" width="100vw">
+      {/* rgb(192, 239, 239) */}
+      <Box bgcolor="rgb(192, 239, 239)" display="flex" height="100vh" width="100vw">
       <Box bgcolor="grey" flex={{ xs: 1, sm: 2 }} >
         <form onSubmit={handleSubmit}>
           <textarea
