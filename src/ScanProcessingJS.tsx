@@ -307,10 +307,15 @@ const ScanProcessingJS: React.FC = () => {
   };
 
 
-  const handleSampleInput = (event: any) => {
+  const handleSampleInputTest = (event: any) => {
     event.preventDefault();
     setSample("outputMessage");
   };
+
+  // const handleSampleInput = (event: any) => {
+  //   event.preventDefault();
+  //   setSample("outputMessage");
+  // };
   
   // const testInput = "3";
   // console.log(
@@ -336,16 +341,24 @@ const ScanProcessingJS: React.FC = () => {
         <form onSubmit={handleSubmit}>
           <textarea
             name="csv"
-            placeholder="Paste the code here...."
+            // placeholder="Paste the code here...."
+            placeholder="Until the bug in the file reader is fixed, please click on the link for the sample to copy and paste back in the field"
             value={sample}
             required
             ></textarea>
           <br/>
           <button type="submit">Process</button>
         </form> 
-        <form onSubmit={handleSampleInput}>
-          <button type="submit">Test with sample code</button>
+        <form onSubmit={handleSampleInputTest}>
+          <button target="https://stackoverflow.com">Test with sample code</button>
         </form> 
+        <a
+            href="https://github.com/conrad1451/CountLinesOfCode/blob/main/src/sample.txt"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Sample text
+          </a>{" "}
       </Box>
       <Box
         display="flex"
