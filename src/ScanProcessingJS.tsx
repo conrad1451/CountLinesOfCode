@@ -15,7 +15,7 @@ import { Box, Grid } from "@material-ui/core";
 // import Radio from "@material-ui/core/Radio";
 // import Paper from "@material-ui/core/Paper";
 
-import { palette } from '@mui/system';
+// import { palette } from '@mui/system';
 
 // Sources:
 // [1] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase
@@ -321,7 +321,7 @@ const ScanProcessingJS: React.FC = () => {
         Counts the lines of code in any given program written in the Khan
         Academy variant of Processing
       </p>
-
+      {/* source: https://mui.com/system/palette/ */}
       {/* Source: https://stackoverflow.com/questions/63353297/material-ui-how-to-stretch-grid-container-to-parent-height-and-width */}
       {/* rgb(192, 239, 239) */}
       <Box bgcolor="info.main" display="flex" height="100vh" width="100vw">
