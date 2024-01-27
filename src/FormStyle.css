@@ -1,4 +1,9 @@
 
+.line-page{
+    padding:20px;
+    margin:2%;
+    background-color: aliceblue;
+}
 
 .flex-container{
     padding: 0;
@@ -17,3 +22,9 @@
 .container{
     flex-wrap: wrap;
 }
+
+textarea {
+    width: 500px;
+    height: 360px;
+  }
+  

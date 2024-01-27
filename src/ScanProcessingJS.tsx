@@ -6,12 +6,16 @@ import React from "react";
 import { useState } from "react";
 
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import Grid, { GridSpacing } from "@material-ui/core/Grid";
-import FormLabel from "@material-ui/core/FormLabel";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import Radio from "@material-ui/core/Radio";
-import Paper from "@material-ui/core/Paper";
+// import Grid, { GridSpacing } from "@material-ui/core/Grid";
+// import { Box, CssBaseline, Grid } from "@material-ui/core";
+import { Box, Grid } from "@material-ui/core";
+// import FormLabel from "@material-ui/core/FormLabel";
+// import FormControlLabel from "@material-ui/core/FormControlLabel";
+// import RadioGroup from "@material-ui/core/RadioGroup";
+// import Radio from "@material-ui/core/Radio";
+// import Paper from "@material-ui/core/Paper";
+
+// import { palette } from '@mui/system';
 
 // Sources:
 // [1] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase
@@ -221,12 +225,12 @@ function createNewText(anArrayOfLines: string[]) {
 
 const ScanProcessingJS: React.FC = () => {
   const [text, setText] = useState<string>("");
-  const [spacing, setSpacing] = React.useState<GridSpacing>(2);
+  // const [spacing, setSpacing] = React.useState<GridSpacing>(2);
   const classes = useStyles();
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSpacing(Number((event.target as HTMLInputElement).value) as GridSpacing);
-  };
+  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setSpacing(Number((event.target as HTMLInputElement).value) as GridSpacing);
+  // };
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -317,67 +321,86 @@ const ScanProcessingJS: React.FC = () => {
         Counts the lines of code in any given program written in the Khan
         Academy variant of Processing
       </p>
+      {/* source: https://mui.com/system/palette/ */}
+      {/* Source: https://stackoverflow.com/questions/63353297/material-ui-how-to-stretch-grid-container-to-parent-height-and-width */}
+      {/* rgb(192, 239, 239) */}
+      <Box display="flex" height="100vh" width="100vw">
+      <Box flex={{ xs: 1, sm: 2 }} >
+        <form onSubmit={handleSubmit}>
+          <textarea
+            name="csv"
+            placeholder="Paste the code here...."
+            required
+            ></textarea>
+          <br/>
+          <button type="submit">Process</button>
+        </form> 
+      </Box>
+      <Box
+        display="flex"
+        flex={3}
+        flexDirection={{ xs: "column", sm: "row" }}
+      >
+        <textarea
+          name="resultField"
+          placeholder="Program analysis comes here"
+          value={text}
+          rows={10}
+          required
+          ></textarea> 
+      </Box>
+    </Box>
+
+      {/* <>
+      <CssBaseline />
+      <div
+        style={{
+          background: "gray",
+          display: "flex",
+          height: "100vh",
+          width: "100vw",
+        }}
+      >
+        <div style={{ display: "flex", flex: 1 }}>
+          <div style={{ background: "yellow", flex: 1 }}>Sidebar</div>
+          <div
+            style={{
+              display: "flex",
+              background: "purple",
+              flexDirection: "column",
+              flex: 2,
+            }}
+          >
+            <div style={{ background: "blue", flex: 2 }}>Header</div>
+            <div style={{ background: "red", flex: 10 }}>Content</div>
+          </div>
+        </div>
+      </div>
+    </> */}
 
       <Grid container className={classes.root} spacing={2}>
         {/* <Grid item xs={12} lg={12}> */}
-        {/* <Grid item lg={12}> */}
-        <Grid item class="col-4">
+        {/* <Grid item className="col-4"> */}
+        {/* <Grid item lg={12}>
           <Grid container justifyContent="center" spacing={spacing}>
-            {
-              <Grid item>
-                <form onSubmit={handleSubmit}>
-                  <textarea
-                    name="csv"
-                    placeholder="Paste the code here...."
-                    rows={10}
-                    required
-                    >
-                    </textarea>
-                    <br/>
-                    <button type="submit">Process</button>
-                </form>
-              </Grid>
-            }
-            {
-              <Grid item>
-                <textarea
-                  name="resultField"
-                  placeholder="Program analysis comes here"
-                  value={text}
-                  rows={10}
-                  required
-                ></textarea>
-              </Grid>
-            }
-          </Grid>
-        </Grid>
-        {/* <Grid item xs={12} lg={12}> */}
-        {/* <Grid item lg={12}> */}
-        <Grid item class="col-4">
-          <Paper className={classes.control}>
-            <Grid container>
-              <Grid item>
-                <FormLabel>spacing</FormLabel>
-                <RadioGroup
-                  name="spacing"
-                  aria-label="spacing"
-                  value={spacing.toString()}
-                  onChange={handleChange}
-                  row
-                >
-                  {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
-                    <FormControlLabel
-                      key={value}
-                      value={value.toString()}
-                      control={<Radio />}
-                      label={value.toString()}
-                    />
-                  ))}
-                </RadioGroup>
-              </Grid>
+            <Grid item>
+
+            // used to have form here but moved it
             </Grid>
-          </Paper>
-        </Grid>
+          </Grid>
+        </Grid> */}
+        {/* <Grid item className="col-4">
+          <Grid container justifyContent="center" spacing={spacing}>
+            <Grid item>
+
+            // used to have form here but moved it
+
+              </Grid>
+          </Grid>
+        </Grid> */}
+        {/* <Grid item xs={12} lg={12}> */}
+        {/* <Grid item className="col-4"> */}
+ 
       </Grid>
 
 
