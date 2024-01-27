@@ -324,8 +324,8 @@ const ScanProcessingJS: React.FC = () => {
       {/* source: https://mui.com/system/palette/ */}
       {/* Source: https://stackoverflow.com/questions/63353297/material-ui-how-to-stretch-grid-container-to-parent-height-and-width */}
       {/* rgb(192, 239, 239) */}
-      <Box bgcolor="info.main" display="flex" height="100vh" width="100vw">
-      <Box bgcolor="info.main" flex={{ xs: 1, sm: 2 }} >
+      <Box display="flex" height="100vh" width="100vw">
+      <Box flex={{ xs: 1, sm: 2 }} >
         <form onSubmit={handleSubmit}>
           <textarea
             name="csv"
@@ -337,7 +337,6 @@ const ScanProcessingJS: React.FC = () => {
         </form> 
       </Box>
       <Box
-        bgcolor="info.main"
         display="flex"
         flex={3}
         flexDirection={{ xs: "column", sm: "row" }}
