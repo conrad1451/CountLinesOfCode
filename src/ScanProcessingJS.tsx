@@ -224,6 +224,7 @@ function createNewText(anArrayOfLines: string[]) {
 
 
 const ScanProcessingJS: React.FC = () => {
+  const [sample, setSample] = useState<string>("");
   const [text, setText] = useState<string>("");
   // const [spacing, setSpacing] = React.useState<GridSpacing>(2);
   const classes = useStyles();
@@ -304,6 +305,12 @@ const ScanProcessingJS: React.FC = () => {
 
     setText(outputMessage);
   };
+
+
+  const handleSampleInput = (event: any) => {
+    event.preventDefault();
+    setSample("outputMessage");
+  };
   
   // const testInput = "3";
   // console.log(
@@ -330,10 +337,14 @@ const ScanProcessingJS: React.FC = () => {
           <textarea
             name="csv"
             placeholder="Paste the code here...."
+            value={sample}
             required
             ></textarea>
           <br/>
           <button type="submit">Process</button>
+        </form> 
+        <form onSubmit={handleSampleInput}>
+          <button type="submit">Test with sample code</button>
         </form> 
       </Box>
       <Box
