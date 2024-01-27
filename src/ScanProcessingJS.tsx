@@ -332,8 +332,14 @@ const ScanProcessingJS: React.FC = () => {
             ></textarea>
           <br/>
           <button type="submit">Process</button>
-        </form>
-
+        </form> 
+      </Box>
+      <Box
+        bgcolor="yellow"
+        display="flex"
+        flex={3}
+        flexDirection={{ xs: "column", sm: "row" }}
+      >
         <textarea
           name="resultField"
           placeholder="Program analysis comes here"
@@ -342,11 +348,6 @@ const ScanProcessingJS: React.FC = () => {
           required
           ></textarea> 
       </Box>
-      <Box
-        bgcolor="yellow"
-        display="flex"
-        flex={3}
-        flexDirection={{ xs: "column", sm: "row" }}/>
     </Box>
 
       {/* <>
