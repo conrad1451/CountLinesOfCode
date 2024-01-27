@@ -346,9 +346,7 @@ const ScanProcessingJS: React.FC = () => {
           value={text}
           rows={10}
           required
-          ></textarea>
-        <Box bgcolor="blue" flex={{ xs: 1, sm: 2 }} />
-        <Box bgcolor="purple" flex={{ xs: 1, sm: 2 }} />
+          ></textarea> 
       </Box>
     </Box>
 
