@@ -6,7 +6,8 @@ import React from "react";
 import { useState } from "react";
 
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import Grid, { GridSpacing } from "@material-ui/core/Grid";
+// import Grid, { GridSpacing } from "@material-ui/core/Grid";
+import { Box, CssBaseline, Grid } from "@material-ui/core";
 import FormLabel from "@material-ui/core/FormLabel";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import RadioGroup from "@material-ui/core/RadioGroup";
@@ -221,12 +222,12 @@ function createNewText(anArrayOfLines: string[]) {
 
 const ScanProcessingJS: React.FC = () => {
   const [text, setText] = useState<string>("");
-  const [spacing, setSpacing] = React.useState<GridSpacing>(2);
+  // const [spacing, setSpacing] = React.useState<GridSpacing>(2);
   const classes = useStyles();
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSpacing(Number((event.target as HTMLInputElement).value) as GridSpacing);
-  };
+  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setSpacing(Number((event.target as HTMLInputElement).value) as GridSpacing);
+  // };
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -318,10 +319,40 @@ const ScanProcessingJS: React.FC = () => {
         Academy variant of Processing
       </p>
 
+      {/* Source: https://stackoverflow.com/questions/63353297/material-ui-how-to-stretch-grid-container-to-parent-height-and-width */}
+
+
+      <>
+      <CssBaseline />
+      <div
+        style={{
+          background: "gray",
+          display: "flex",
+          height: "100vh",
+          width: "100vw",
+        }}
+      >
+        <div style={{ display: "flex", flex: 1 }}>
+          <div style={{ background: "yellow", flex: 1 }}>Sidebar</div>
+          <div
+            style={{
+              display: "flex",
+              background: "purple",
+              flexDirection: "column",
+              flex: 2,
+            }}
+          >
+            <div style={{ background: "blue", flex: 2 }}>Header</div>
+            <div style={{ background: "red", flex: 10 }}>Content</div>
+          </div>
+        </div>
+      </div>
+    </>
+
       <Grid container className={classes.root} spacing={2}>
         {/* <Grid item xs={12} lg={12}> */}
         {/* <Grid item className="col-4"> */}
-        <Grid item lg={12}>
+        {/* <Grid item lg={12}>
           <Grid container justifyContent="center" spacing={spacing}>
             <Grid item>
               <form onSubmit={handleSubmit}>
@@ -335,8 +366,8 @@ const ScanProcessingJS: React.FC = () => {
               </form>
             </Grid>
           </Grid>
-        </Grid>
-        <Grid item className="col-4">
+        </Grid> */}
+        {/* <Grid item className="col-4">
           <Grid container justifyContent="center" spacing={spacing}>
             <Grid item>
               <textarea
@@ -348,34 +379,10 @@ const ScanProcessingJS: React.FC = () => {
               ></textarea>
               </Grid>
           </Grid>
-        </Grid>
+        </Grid> */}
         {/* <Grid item xs={12} lg={12}> */}
         {/* <Grid item className="col-4"> */}
-        <Grid item lg={12}>
-          <Paper className={classes.control}>
-            <Grid container>
-              <Grid item>
-                <FormLabel>spacing</FormLabel>
-                <RadioGroup
-                  name="spacing"
-                  aria-label="spacing"
-                  value={spacing.toString()}
-                  onChange={handleChange}
-                  row
-                >
-                  {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
-                    <FormControlLabel
-                      key={value}
-                      value={value.toString()}
-                      control={<Radio />}
-                      label={value.toString()}
-                    />
-                  ))}
-                </RadioGroup>
-              </Grid>
-            </Grid>
-          </Paper>
-        </Grid>
+ 
       </Grid>
 
 
