@@ -321,8 +321,20 @@ const ScanProcessingJS: React.FC = () => {
 
       {/* Source: https://stackoverflow.com/questions/63353297/material-ui-how-to-stretch-grid-container-to-parent-height-and-width */}
 
-
-      <>
+      <Box bgcolor="green" display="flex" height="100vh" width="100vw">
+      <Box bgcolor="red" flex={{ xs: 1, sm: 2 }} />
+      <Box
+        bgcolor="yellow"
+        display="flex"
+        flex={1}
+        flexDirection={{ xs: "column", sm: "row" }}
+      >
+        <Box bgcolor="blue" flex={{ xs: 1, sm: 2 }} />
+        <Box bgcolor="purple" flex={{ xs: 1, sm: 2 }} />
+      </Box>
+    </Box>
+    
+      {/* <>
       <CssBaseline />
       <div
         style={{
@@ -347,7 +359,7 @@ const ScanProcessingJS: React.FC = () => {
           </div>
         </div>
       </div>
-    </>
+    </> */}
 
       <Grid container className={classes.root} spacing={2}>
         {/* <Grid item xs={12} lg={12}> */}
