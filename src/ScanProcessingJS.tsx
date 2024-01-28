@@ -9,23 +9,12 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 // import Grid, { GridSpacing } from "@material-ui/core/Grid";
 // import { Box, CssBaseline, Grid } from "@material-ui/core";
 import { Box, Grid } from "@material-ui/core";
-// import FormLabel from "@material-ui/core/FormLabel";
-// import FormControlLabel from "@material-ui/core/FormControlLabel";
-// import RadioGroup from "@material-ui/core/RadioGroup";
-// import Radio from "@material-ui/core/Radio";
-// import Paper from "@material-ui/core/Paper";
 
 // import { palette } from '@mui/system';
 
 // Sources:
-// [1] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase
-// [2] https://stackoverflow.com/questions/5296268/fastest-way-to-check-a-string-contain-another-substring-in-javascript
-// [3]https://www.tutorialspoint.com/How-to-format-a-float-in-JavaScript
-
-// [4] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
-// [5] https://stackoverflow.com/questions/26069238/call-multiple-functions-onclick-reactjs
-
-//[A]
+// [1]: https://mui.com/system/palette/   
+// [2]: https://stackoverflow.com/questions/63353297/material-ui-how-to-stretch-grid-container-to-parent-height-and-width
 
 // - could not figure out how to so global variables to the rescue
 
@@ -226,12 +215,9 @@ function createNewText(anArrayOfLines: string[]) {
 const ScanProcessingJS: React.FC = () => {
   const [sample, setSample] = useState<string>("");
   const [text, setText] = useState<string>("");
-  // const [spacing, setSpacing] = React.useState<GridSpacing>(2);
-  const classes = useStyles();
 
-  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   setSpacing(Number((event.target as HTMLInputElement).value) as GridSpacing);
-  // };
+
+  const classes = useStyles();
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -328,8 +314,8 @@ const ScanProcessingJS: React.FC = () => {
         Counts the lines of code in any given program written in the Khan
         Academy variant of Processing
       </p>
-      {/* source: https://mui.com/system/palette/ */}
-      {/* Source: https://stackoverflow.com/questions/63353297/material-ui-how-to-stretch-grid-container-to-parent-height-and-width */}
+      {/* [1] */}
+      {/* [2] */}
       {/* rgb(192, 239, 239) */}
       <Box display="flex" height="100vh" width="100vw">
       <Box flex={{ xs: 1, sm: 2 }} >
@@ -362,56 +348,10 @@ const ScanProcessingJS: React.FC = () => {
       </Box>
     </Box>
 
-      {/* <>
-      <CssBaseline />
-      <div
-        style={{
-          background: "gray",
-          display: "flex",
-          height: "100vh",
-          width: "100vw",
-        }}
-      >
-        <div style={{ display: "flex", flex: 1 }}>
-          <div style={{ background: "yellow", flex: 1 }}>Sidebar</div>
-          <div
-            style={{
-              display: "flex",
-              background: "purple",
-              flexDirection: "column",
-              flex: 2,
-            }}
-          >
-            <div style={{ background: "blue", flex: 2 }}>Header</div>
-            <div style={{ background: "red", flex: 10 }}>Content</div>
-          </div>
-        </div>
-      </div>
-    </> */}
+
 
       <Grid container className={classes.root} spacing={2}>
         {/* <Grid item xs={12} lg={12}> */}
-        {/* <Grid item className="col-4"> */}
-        {/* <Grid item lg={12}>
-          <Grid container justifyContent="center" spacing={spacing}>
-            <Grid item>
-
-            // used to have form here but moved it
-            </Grid>
-          </Grid>
-        </Grid> */}
-        {/* <Grid item className="col-4">
-          <Grid container justifyContent="center" spacing={spacing}>
-            <Grid item>
-
-            // used to have form here but moved it
-
-              </Grid>
-          </Grid>
-        </Grid> */}
-        {/* <Grid item xs={12} lg={12}> */}
-        {/* <Grid item className="col-4"> */}
- 
       </Grid>
 
 
