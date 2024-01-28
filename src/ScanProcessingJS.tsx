@@ -10,7 +10,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 // import { Box, CssBaseline, Grid } from "@material-ui/core";
 import { Box, Grid } from "@material-ui/core";
 
-import sampleText from "./sampleText"
+// import sampleText from "./sampleText" // did not work
 // import { palette } from '@mui/system';
 
 // Sources:
@@ -332,9 +332,13 @@ const ScanProcessingJS: React.FC = () => {
           <br/>
           <button type="submit">Process</button>
         </form> 
+
+        
         <form onSubmit={handleSampleInput}>
-          <button type="submit">Test with sample code</button>
+          <button type="submit">Open sample code for use</button>
         </form> 
+
+
       </Box>
       <Box
         display="flex"
