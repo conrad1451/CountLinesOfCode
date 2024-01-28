@@ -10,6 +10,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 // import { Box, CssBaseline, Grid } from "@material-ui/core";
 import { Box, Grid } from "@material-ui/core";
 
+import sampleText from "./sampleText"
 // import { palette } from '@mui/system';
 
 // Sources:
