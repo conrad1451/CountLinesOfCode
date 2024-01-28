@@ -306,6 +306,8 @@ const ScanProcessingJS: React.FC = () => {
   //   String(isANumber("3")),
   // );
 
+  console.log(sample);
+
   return (
     <section className="line-page">
       <h1>Count Lines of Code</h1>
@@ -323,7 +325,7 @@ const ScanProcessingJS: React.FC = () => {
           <textarea
             name="csv"
             placeholder="Paste the code here...."
-            value={sample}
+            // value={sample}
             required
             ></textarea>
           <br/>
@@ -347,14 +349,11 @@ const ScanProcessingJS: React.FC = () => {
           ></textarea> 
       </Box>
     </Box>
-
-
-
-      <Grid container className={classes.root} spacing={2}>
-        {/* <Grid item xs={12} lg={12}> */}
-      </Grid>
-
-
+ 
+    <Grid container className={classes.root} spacing={2}>
+      {/* <Grid item xs={12} lg={12}> */}
+    </Grid>
+ 
     </section>
   );
 };
