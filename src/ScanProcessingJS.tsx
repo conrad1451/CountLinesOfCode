@@ -17,6 +17,8 @@ import { Box, Grid } from "@material-ui/core";
 // [1]: https://mui.com/system/palette/   
 // [2]: https://stackoverflow.com/questions/63353297/material-ui-how-to-stretch-grid-container-to-parent-height-and-width
 // [3]: https://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link
+// [4]: https://stackoverflow.com/questions/39501289/in-reactjs-how-to-copy-text-to-clipboard?page=1&tab=scoredesc#tab-top
+
 // - could not figure out how to so global variables to the rescue
 
 import "./FormStyle.css";
@@ -343,7 +345,10 @@ const ScanProcessingJS: React.FC = () => {
         <br/>
         <a href="https://raw.githubusercontent.com/conrad1451/CountLinesOfCode/main/src/sampleText.txt" className="button">Open Sample code (Raw code Page)</a>
 
-
+        {/* [4] */}
+        <button onClick={() =>  navigator.clipboard.writeText('Copy this text to clipboard')}>
+          Copy some text
+        </button>
       </Box>
       <Box
         display="flex"
