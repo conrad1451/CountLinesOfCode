@@ -9,7 +9,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 // import Grid, { GridSpacing } from "@material-ui/core/Grid";
 // import { Box, CssBaseline, Grid } from "@material-ui/core";
 import { Box, Grid } from "@material-ui/core";
-import AutohideSnackbar from "./AutohideSnackbar";
+// import AutohideSnackbar from "./AutohideSnackbar";
 
 // import sampleText from "./sampleText" // did not work
 // import { palette } from '@mui/system';
@@ -351,7 +351,7 @@ const ScanProcessingJS: React.FC = () => {
         <button onClick={() =>  navigator.clipboard.writeText('Copy this text to clipboard')}>
           Copy some text
         </button>
-        <AutohideSnackbar />
+        {/* <AutohideSnackbar /> */}
       </Box>
       <Box
         display="flex"
