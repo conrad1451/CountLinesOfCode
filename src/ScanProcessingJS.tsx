@@ -16,7 +16,7 @@ import { Box, Grid } from "@material-ui/core";
 // Sources:
 // [1]: https://mui.com/system/palette/   
 // [2]: https://stackoverflow.com/questions/63353297/material-ui-how-to-stretch-grid-container-to-parent-height-and-width
-
+// [3]: https://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link
 // - could not figure out how to so global variables to the rescue
 
 import "./FormStyle.css";
@@ -338,7 +338,7 @@ const ScanProcessingJS: React.FC = () => {
           <button type="submit">Open sample code for use</button>
         </form> 
 
-        {/* source: https://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link */}
+        {/* [3] */}
         <a href="https://github.com/conrad1451/CountLinesOfCode/blob/main/src/sampleText.txt" className="button">Open Sample code (GitHub Page)</a>
         <br/>
         <a href="https://raw.githubusercontent.com/conrad1451/CountLinesOfCode/main/src/sampleText.txt" className="button">Open Sample code (Raw code Page)</a>
