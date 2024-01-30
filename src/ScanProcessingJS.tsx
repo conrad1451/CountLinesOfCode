@@ -344,13 +344,15 @@ const ScanProcessingJS: React.FC = () => {
         {/* [3] */}
         {/* This was a test of clickable links. Commenting it out to opt for button instead */}
         {/* <a href="https://github.com/conrad1451/CountLinesOfCode/blob/main/src/sampleText.txt" className="button">Open Sample code (GitHub Page)</a>
-        <br/>
-        <a href="https://raw.githubusercontent.com/conrad1451/CountLinesOfCode/main/src/sampleText.txt" className="button">Open Sample code (Raw code Page)</a> */}
+        <br/> */}
+        <a href="https://raw.githubusercontent.com/conrad1451/CountLinesOfCode/main/src/sampleText.txt" className="button">Open Sample code (Raw code Page)</a>
+        {/* uncommented again because button wasn't working */}
+
 
         {/* [4] */}
-        <button onClick={() =>  navigator.clipboard.writeText('Copy this text to clipboard')}>
+        {/* <button onClick={() =>  navigator.clipboard.writeText('Copy this text to clipboard')}>
           Copy some text
-        </button>
+        </button>/ */}
         {/* <AutohideSnackbar /> */}
       </Box>
       <Box
