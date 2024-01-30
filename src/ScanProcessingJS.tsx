@@ -339,7 +339,7 @@ const ScanProcessingJS: React.FC = () => {
         </form> 
 
         {/* source: https://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link */}
-        <a href="https://google.com" class="button">Go to Google</a>
+        <a href="https://google.com" className="button">Go to Google</a>
 
 
       </Box>
