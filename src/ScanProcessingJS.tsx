@@ -341,9 +341,10 @@ const ScanProcessingJS: React.FC = () => {
         </form> 
 
         {/* [3] */}
-        <a href="https://github.com/conrad1451/CountLinesOfCode/blob/main/src/sampleText.txt" className="button">Open Sample code (GitHub Page)</a>
+        {/* This was a test of clickable links. Commenting it out to opt for button instead */}
+        {/* <a href="https://github.com/conrad1451/CountLinesOfCode/blob/main/src/sampleText.txt" className="button">Open Sample code (GitHub Page)</a>
         <br/>
-        <a href="https://raw.githubusercontent.com/conrad1451/CountLinesOfCode/main/src/sampleText.txt" className="button">Open Sample code (Raw code Page)</a>
+        <a href="https://raw.githubusercontent.com/conrad1451/CountLinesOfCode/main/src/sampleText.txt" className="button">Open Sample code (Raw code Page)</a> */}
 
         {/* [4] */}
         <button onClick={() =>  navigator.clipboard.writeText('Copy this text to clipboard')}>
