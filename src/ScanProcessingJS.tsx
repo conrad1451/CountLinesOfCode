@@ -337,9 +337,9 @@ const ScanProcessingJS: React.FC = () => {
         </form> 
 
         
-        <form onSubmit={handleSampleInput}>
+        {/* <form onSubmit={handleSampleInput}>
           <button type="submit">Open sample code for use</button>
-        </form> 
+        </form>  */}
 
         {/* [3] */}
         {/* This was a test of clickable links. Commenting it out to opt for button instead */}
