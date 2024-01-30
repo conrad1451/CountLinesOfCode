@@ -340,7 +340,7 @@ const ScanProcessingJS: React.FC = () => {
 
         {/* source: https://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link */}
         <a href="https://github.com/conrad1451/CountLinesOfCode/blob/main/src/sampleText.txt" className="button">Open Sample code (GitHub Page)</a>
-
+        <br/>
         <a href="https://raw.githubusercontent.com/conrad1451/CountLinesOfCode/main/src/sampleText.txt" className="button">Open Sample code (Raw code Page)</a>
 
 
