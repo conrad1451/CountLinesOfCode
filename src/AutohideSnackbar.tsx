@@ -24,6 +24,8 @@ export default function AutohideSnackbar() {
     setOpen(false);
   };
 
+  setTimerInSec(1.5);
+  
   return (
     <div>
       <Button onClick={handleClick}>Open Snackbar</Button>
