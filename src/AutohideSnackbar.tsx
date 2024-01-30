@@ -13,17 +13,25 @@ export default function AutohideSnackbar() {
     setOpen(true);
   };
 
-  const handleClose = (
-    event: React.SyntheticEvent | Event,
-    reason?: string
-  ) => {
+  // const handleClose = (
+  //   event: React.SyntheticEvent | Event,
+  //   reason?: string
+  // ) => {
+  //   if (reason === "clickaway") {
+  //     return;
+  //   }
+
+  //   setOpen(false);
+  // };
+
+  const handleClose = (reason?: string) => {
     if (reason === "clickaway") {
       return;
     }
 
     setOpen(false);
   };
-
+  
   setTimerInSec(1.5);
   
   return (
