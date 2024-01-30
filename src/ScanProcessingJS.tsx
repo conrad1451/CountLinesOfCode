@@ -217,7 +217,7 @@ function createNewText(anArrayOfLines: string[]) {
 
 
 const ScanProcessingJS: React.FC = () => {
-  const [sample, setSample] = useState<string>("");
+  // const [sample, setSample] = useState<string>("");
   const [text, setText] = useState<string>("");
 
 
@@ -297,10 +297,10 @@ const ScanProcessingJS: React.FC = () => {
   };
 
 
-  const handleSampleInput = (event: any) => {
-    event.preventDefault();
-    setSample("outputMessage");
-  };
+  // const handleSampleInput = (event: any) => {
+  //   event.preventDefault();
+  //   setSample("outputMessage");
+  // };
   
   // const testInput = "3";
   // console.log(
@@ -310,7 +310,7 @@ const ScanProcessingJS: React.FC = () => {
   //   String(isANumber("3")),
   // );
 
-  console.log(sample);
+  // console.log(sample);
 
   return (
     <section className="line-page">
