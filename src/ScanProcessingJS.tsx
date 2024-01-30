@@ -9,6 +9,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 // import Grid, { GridSpacing } from "@material-ui/core/Grid";
 // import { Box, CssBaseline, Grid } from "@material-ui/core";
 import { Box, Grid } from "@material-ui/core";
+// import AutohideSnackbar from "./AutohideSnackbar";
 
 // import sampleText from "./sampleText" // did not work
 // import { palette } from '@mui/system';
@@ -16,6 +17,8 @@ import { Box, Grid } from "@material-ui/core";
 // Sources:
 // [1]: https://mui.com/system/palette/   
 // [2]: https://stackoverflow.com/questions/63353297/material-ui-how-to-stretch-grid-container-to-parent-height-and-width
+// [3]: https://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link
+// [4]: https://stackoverflow.com/questions/39501289/in-reactjs-how-to-copy-text-to-clipboard?page=1&tab=scoredesc#tab-top
 
 // - could not figure out how to so global variables to the rescue
 
@@ -214,7 +217,7 @@ function createNewText(anArrayOfLines: string[]) {
 
 
 const ScanProcessingJS: React.FC = () => {
-  const [sample, setSample] = useState<string>("");
+  // const [sample, setSample] = useState<string>("");
   const [text, setText] = useState<string>("");
 
 
@@ -294,10 +297,10 @@ const ScanProcessingJS: React.FC = () => {
   };
 
 
-  const handleSampleInput = (event: any) => {
-    event.preventDefault();
-    setSample("outputMessage");
-  };
+  // const handleSampleInput = (event: any) => {
+  //   event.preventDefault();
+  //   setSample("outputMessage");
+  // };
   
   // const testInput = "3";
   // console.log(
@@ -307,7 +310,7 @@ const ScanProcessingJS: React.FC = () => {
   //   String(isANumber("3")),
   // );
 
-  console.log(sample);
+  // console.log(sample);
 
   return (
     <section className="line-page">
@@ -334,11 +337,23 @@ const ScanProcessingJS: React.FC = () => {
         </form> 
 
         
-        <form onSubmit={handleSampleInput}>
+        {/* <form onSubmit={handleSampleInput}>
           <button type="submit">Open sample code for use</button>
-        </form> 
+        </form>  */}
+
+        {/* [3] */}
+        {/* This was a test of clickable links. Commenting it out to opt for button instead */}
+        {/* <a href="https://github.com/conrad1451/CountLinesOfCode/blob/main/src/sampleText.txt" className="button">Open Sample code (GitHub Page)</a>
+        <br/> */}
+        <a href="https://raw.githubusercontent.com/conrad1451/CountLinesOfCode/main/src/sampleText.txt" className="button">Open Sample code (Raw code Page)</a>
+        {/* uncommented again because button wasn't working */}
 
 
+        {/* [4] */}
+        {/* <button onClick={() =>  navigator.clipboard.writeText('Copy this text to clipboard')}>
+          Copy some text
+        </button>/ */}
+        {/* <AutohideSnackbar /> */}
       </Box>
       <Box
         display="flex"
