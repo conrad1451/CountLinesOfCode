@@ -318,7 +318,7 @@ const ScanProcessingJS: React.FC = () => {
 
       <p>
         Counts the lines of code in any given program written in the Khan
-        Academy variant of Processing
+        Academy variant of Processing.js.
       </p>
       {/* [1] */}
       {/* [2] */}
