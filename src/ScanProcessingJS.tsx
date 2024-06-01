@@ -297,14 +297,16 @@ const ScanProcessingJS: React.FC = () => {
   };
 
 
-  const handleSampleCodeGrab = (event: any) => {
-    event.preventDefault();
-    // const { csv } = event.target.elements;
-
-    
-    // const arrayOfLines = csv.value.split("\n"); // [A]
+  const handleSampleCodeOpen = (event: any) => {
+    event.preventDefault(); 
 
     window.open('https://javascript.info');  
+  };
+
+  const handleSampleCodeGrab = (event: any) => {
+    event.preventDefault(); 
+
+    window.open('https://raw.githubusercontent.com/conrad1451/CountLinesOfCode/main/src/sampleText.txt');  
   };
 
   // const handleSampleInput = (event: any) => {
@@ -355,8 +357,9 @@ const ScanProcessingJS: React.FC = () => {
         {/* This was a test of clickable links. Commenting it out to opt for button instead */}
         {/* <a href="https://github.com/conrad1451/CountLinesOfCode/blob/main/src/sampleText.txt" className="button">Open Sample code (GitHub Page)</a>
         <br/> */}
-        <button type="submit" onClick={handleSampleCodeGrab}>Open Sample code</button>
-        <a href="https://raw.githubusercontent.com/conrad1451/CountLinesOfCode/main/src/sampleText.txt" className="button">Open Sample code (Raw code Page)</a>
+        <button type="submit" onClick={handleSampleCodeOpen}>Open Sample code</button>
+        <button type="submit" onClick={handleSampleCodeGrab}>Copy Sample code</button>
+        {/* <a href="https://raw.githubusercontent.com/conrad1451/CountLinesOfCode/main/src/sampleText.txt" className="button">Open Sample code (Raw code Page)</a> */}
         {/* uncommented again because button wasn't working */}
 
 
