@@ -20,6 +20,8 @@ import { Box, Grid } from "@material-ui/core";
 // [3]: https://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link
 // [4]: https://stackoverflow.com/questions/39501289/in-reactjs-how-to-copy-text-to-clipboard?page=1&tab=scoredesc#tab-top
 
+// [5]: https://javascript.info/popup-windows
+
 // - could not figure out how to so global variables to the rescue
 
 import "./FormStyle.css";
@@ -227,8 +229,7 @@ const ScanProcessingJS: React.FC = () => {
     event.preventDefault();
     const { csv } = event.target.elements;
 
-    
-    const arrayOfLines = csv.value.split("\n"); // [A]
+    const arrayOfLines = csv.value.split("\n"); 
 
     // arrayOfLines is array where every element is string of one line
     const thetmp1 = createNewText(arrayOfLines);
@@ -300,13 +301,13 @@ const ScanProcessingJS: React.FC = () => {
   const handleSampleCodeOpen = (event: any) => {
     event.preventDefault(); 
 
-    window.open('https://javascript.info');  
+    window.open('https://javascript.info');  // [5] 
   };
 
   const handleSampleCodeGrab = (event: any) => {
     event.preventDefault(); 
 
-    window.open('https://raw.githubusercontent.com/conrad1451/CountLinesOfCode/main/src/sampleText.txt');  
+    window.open('https://raw.githubusercontent.com/conrad1451/CountLinesOfCode/main/src/sampleText.txt');  // [5]
   };
 
   // const handleSampleInput = (event: any) => {
