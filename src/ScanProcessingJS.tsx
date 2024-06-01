@@ -299,10 +299,10 @@ const ScanProcessingJS: React.FC = () => {
 
   const handleSampleCodeGrab = (event: any) => {
     event.preventDefault();
-    const { csv } = event.target.elements;
+    // const { csv } = event.target.elements;
 
     
-    const arrayOfLines = csv.value.split("\n"); // [A]
+    // const arrayOfLines = csv.value.split("\n"); // [A]
 
     window.open('https://javascript.info');  
   };
