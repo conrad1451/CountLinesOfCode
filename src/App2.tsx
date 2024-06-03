@@ -15,6 +15,13 @@ function App() {
 		programming: "",
 	});
 
+    setdata({
+        name: "Bob",
+        age: 14,
+        date: "Today",
+        programming: "data.programming",
+    });
+
 	// // Using useEffect for single rendering
 	// useEffect(() => {
 	// 	// Using fetch to fetch the api from 
