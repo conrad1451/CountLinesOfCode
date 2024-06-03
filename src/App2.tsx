@@ -1,7 +1,8 @@
 // Filename - App.js
 
 // Importing modules
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
