@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+// import App from "./App.tsx";
+import App from "./App2.tsx";
 // import ScanProcessingJS from "./ScanProcessingJS";
 // import TestFile from "./TestFile";
 import "./index.css";
