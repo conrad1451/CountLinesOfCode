@@ -2,7 +2,9 @@
 
 // Importing modules
 // import React, { useState, useEffect } from "react";
-import React, {useState} from "react";
+import React from "react";
+import useState from "react";
+
 import "./App.css";
 
 function App() {
