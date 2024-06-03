@@ -10,7 +10,7 @@ function App() {
 	// object for storing and using data
 	const [data, setdata] = useState({
 		name: "",
-		age: 0,
+		age: 10,
 		date: "",
 		programming: "",
 	});
