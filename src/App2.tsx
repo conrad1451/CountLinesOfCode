@@ -5,6 +5,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
+const API = "https://github-repos-nodejs-api-json.onrender.com/";
+
 function App() {
 	// usestate for setting a javascript
 	// object for storing and using data
@@ -21,7 +23,7 @@ function App() {
 	useEffect(() => {
 		// Using fetch to fetch the api from 
 		// flask server it will be redirected to proxy
-		fetch("/").then((res) =>
+		fetch(API + "/").then((res) =>
 			res.json().then((data) => {
 				// Setting a data from api
 				setdata({
