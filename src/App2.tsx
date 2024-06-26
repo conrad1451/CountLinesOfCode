@@ -21,7 +21,7 @@ function App() {
 	useEffect(() => {
 		// Using fetch to fetch the api from 
 		// flask server it will be redirected to proxy
-		fetch("https://flask-simple-urjk.onrender.com/").then((res) =>
+		fetch("/").then((res) =>
 			res.json().then((data) => {
 				// Setting a data from api
 				setdata({
