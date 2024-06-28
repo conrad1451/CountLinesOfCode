@@ -1,7 +1,8 @@
 import { create } from 'zustand';
 import { devtools, persist, subscribeWithSelector } from 'zustand/middleware';
 
-import { getTestData } from './app/api/exportCode';
+// import { getTestData } from './app/api/exportCode';
+import { getTestData } from '../api/exportCode';
 
 // CHQ: the way this is being made, this is a module. Nice
 const store = (set: any) => ({
