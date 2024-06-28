@@ -25,11 +25,13 @@ function App() {
 	useEffect(() => {
 		// Using fetch to fetch the api from 
 		// flask server it will be redirected to proxy
-		
-		try {
-			const data = await getTestData()
-			if (data) {
-				setdata({
+
+		// Source: https://stackoverflow.com/questions/56838392/how-to-call-an-async-function-inside-useeffect-in-react
+		const fetchMyData = async () => {
+			try {
+				const data = await getTestData()
+				if (data) {
+					setdata({
 					name: data.Name,
 					age: data.Age,
 					date: data.Date,
@@ -38,9 +40,14 @@ function App() {
 			}
 			// console.log("success", data);
 			alert("success", data);
-		} catch (error) {
-			console.error(error);
+			} catch (error) {
+				console.error(error);
+			}
 		}
+
+		fetchMyData();
+		
+
 		
 		// fetch(API + "/").then((res) =>
 		// 	res.json().then((data) => {
