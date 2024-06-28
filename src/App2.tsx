@@ -3,9 +3,11 @@
 // Importing modules
 // import React, { useState, useEffect } from "react";
 import { useState, useEffect } from "react";
+import { getTestData } from './app/api/exportCode';
 import "./App.css";
 
-const API = "https://github-repos-nodejs-api-json.onrender.com/";
+// const API = "https://github-repos-nodejs-api-json.onrender.com/";
+
 
 function App() {
 	// usestate for setting a javascript
@@ -23,17 +25,34 @@ function App() {
 	useEffect(() => {
 		// Using fetch to fetch the api from 
 		// flask server it will be redirected to proxy
-		fetch(API + "/").then((res) =>
-			res.json().then((data) => {
-				// Setting a data from api
+		
+		try {
+			const data = await getTestData()
+			if (data) {
 				setdata({
 					name: data.Name,
 					age: data.Age,
 					date: data.Date,
 					programming: data.programming,
 				});
-			})
-		);
+			}
+			// console.log("success", data);
+			alert("success", data);
+		} catch (error) {
+			console.error(error);
+		}
+		
+		// fetch(API + "/").then((res) =>
+		// 	res.json().then((data) => {
+		// 		// Setting a data from api
+		// 		setdata({
+		// 			name: data.Name,
+		// 			age: data.Age,
+		// 			date: data.Date,
+		// 			programming: data.programming,
+		// 		});
+		// 	})
+		// );
 	}, []);
 
 	return (
