@@ -298,11 +298,11 @@ const ScanProcessingJS: React.FC = () => {
   };
 
 
-  const handleSampleCodeOpen = (event: any) => {
-    event.preventDefault(); 
+  // const handleSampleCodeOpen = (event: any) => {
+  //   event.preventDefault(); 
 
-    window.open('https://javascript.info');  // [5] 
-  };
+  //   window.open('https://javascript.info');  // [5] 
+  // };
 
   const handleSampleCodeGrab = (event: any) => {
     event.preventDefault(); 
