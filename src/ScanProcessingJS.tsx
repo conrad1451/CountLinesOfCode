@@ -358,8 +358,8 @@ const ScanProcessingJS: React.FC = () => {
         {/* This was a test of clickable links. Commenting it out to opt for button instead */}
         {/* <a href="https://github.com/conrad1451/CountLinesOfCode/blob/main/src/sampleText.txt" className="button">Open Sample code (GitHub Page)</a>
         <br/> */}
-        <button type="submit" onClick={handleSampleCodeOpen}>Open Sample code</button>
-        <button type="submit" onClick={handleSampleCodeGrab}>Copy Sample code</button>
+{/*         <button type="submit" onClick={handleSampleCodeOpen}>Open Sample code</button> */}
+        <button type="submit" onClick={handleSampleCodeGrab}>Open and Copy Sample code</button>
         {/* <a href="https://raw.githubusercontent.com/conrad1451/CountLinesOfCode/main/src/sampleText.txt" className="button">Open Sample code (Raw code Page)</a> */}
         {/* uncommented again because button wasn't working */}
 
